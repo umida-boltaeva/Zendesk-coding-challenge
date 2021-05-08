@@ -34,34 +34,36 @@ async function controller() {
   let afterCursor;
 
   while (true) {
-    const { command } = await prompt.get(commandSchema);
+    try {
+      const { command } = await prompt.get(commandSchema);
 
-    switch (command) {
-      case "menu":
-        console.log(menu());
-        break;
-      case "1":
-        const ticketsData = await getAllTickets(afterCursor);
-        afterCursor = ticketsData.data.meta.after_cursor;
+      switch (command) {
+        case "menu":
+          console.log(menu());
+          break;
+        case "1":
+          const ticketsData = await getAllTickets(afterCursor);
+          afterCursor = ticketsData.data.meta.after_cursor;
 
-        console.log(tickets(ticketsData));
-        break;
+          console.log(tickets(ticketsData));
+          break;
 
-      case "2":
-        const { id } = await prompt.get(ticketIdSchema);
-        const ticketData = await getTicket(id);
-        console.log(ticket(ticketData));
-        break;
+        case "2":
+          const { id } = await prompt.get(ticketIdSchema);
+          const ticketData = await getTicket(id);
+          console.log(ticket(ticketData));
+          break;
 
-      case "quit":
-        console.log(quit());
-        return;
-      default:
-        break;
+        case "quit":
+          console.log(quit());
+          return;
+        default:
+          break;
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
-
-  prompt.stop();
 }
 
 module.exports = { controller };
