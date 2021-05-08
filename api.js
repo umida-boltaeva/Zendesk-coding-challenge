@@ -1,5 +1,8 @@
-const dotenv = require("dotenv");
-const axios = require("axios").default;
+// const dotenv = require("dotenv");
+// const axios = require("axios").default;
+
+import dotenv from "dotenv";
+import axios from "axios";
 
 dotenv.config();
 
@@ -10,16 +13,20 @@ const auth = {
   password: process.env.MY_PASSWORD,
 };
 
-async function getAllTickets() {
+export async function getAllTickets(afterCursor) {
+  let url = `${baseUrl}tickets.json?page[size]=25`;
+  if (afterCursor != null) {
+    url = `${url}&page[after]=${afterCursor}`;
+  }
   return await axios({
     method: "get",
-    url: `${baseUrl}tickets`,
+    url: url,
     responseType: "json",
     auth: auth,
   });
 }
 
-async function getTicket(id) {
+export async function getTicket(id) {
   return await axios({
     method: "get",
     url: `${baseUrl}tickets/${id}`,
