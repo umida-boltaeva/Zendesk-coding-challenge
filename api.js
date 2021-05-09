@@ -11,7 +11,8 @@ const auth = {
 };
 
 async function getAllTickets(afterCursor) {
-  let url = `${baseUrl}tickets.json?page[size]=25`;
+  let url = `${baseUrl}tickets.json?page[size]=25`; //changed the size to 25 on a page.
+
   if (afterCursor != null) {
     url = `${url}&page[after]=${afterCursor}`;
   }
@@ -36,3 +37,6 @@ module.exports = {
   getAllTickets,
   getTicket,
 };
+
+// module is a code that allows to share and reuse the code
+// breaking it into small chunks.

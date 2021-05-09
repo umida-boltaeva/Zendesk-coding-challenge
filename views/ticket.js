@@ -17,9 +17,14 @@ function ticket(ticketData) {
     { has_incidents: ticket.has_incidents },
     { is_public: ticket.is_public },
     { tags: ticket.tags.reduce((prev, curr) => `${prev}, ${curr}`) }
+
+    // tags is an array. I used reduce method
+    // to show its elements in the table beautifully.
   );
 
-  //ticket.description is too long for the table. So, I put it at the end of the table.
+  // ticket.description is too long for the table.
+  // So, I put it at the end of the table.
+
   return `${table.toString()}
   ${ticket.description}
   ${menu()}`;

@@ -45,9 +45,11 @@ async function controller() {
         case "menu":
           console.log(menu());
           break;
+
         case "1":
           const ticketsData = await getAllTickets(afterCursor);
           // If has_more is false, clear afterCursor even though its new value is a valid string
+
           afterCursor = ticketsData.data.meta.has_more
             ? ticketsData.data.meta.after_cursor
             : null;
