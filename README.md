@@ -13,7 +13,12 @@ I built this app using [MVC](https://medium.com/@ToddZebert/a-walk-through-of-a-
 ### Used technologies:
 
 - JavaScript
-- Node.js
-- [prompt](https://www.npmjs.com/package/prompt)
-- [axios](https://www.npmjs.com/package/axios)
-- [dotenv](https://www.npmjs.com/package/dotenv)
+- Node.js v12.18.0
+- yarn 1.22.10
+
+
+## Installation
+
+## Usage
+
+## Project Status
