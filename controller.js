@@ -19,8 +19,8 @@ const commandSchema = {
 const ticketIdSchema = {
   properties: {
     id: {
-      pattern: /^\d+$/,
-      message: "Wrong ID! Please, provide an integer",
+      pattern: /^[1-9]\d*$/,
+      message: "Wrong ID! Please, provide a positive integer",
       required: true,
     },
   },
@@ -37,13 +37,20 @@ async function controller() {
     try {
       const { command } = await prompt.get(commandSchema);
 
+      if (command !== "1") {
+        afterCursor = null; // Clear all tickets pagination state
+      }
+
       switch (command) {
         case "menu":
           console.log(menu());
           break;
         case "1":
           const ticketsData = await getAllTickets(afterCursor);
-          afterCursor = ticketsData.data.meta.after_cursor;
+          // If has_more is false, clear afterCursor even though its new value is a valid string
+          afterCursor = ticketsData.data.meta.has_more
+            ? ticketsData.data.meta.after_cursor
+            : null;
 
           console.log(tickets(ticketsData));
           break;
@@ -57,8 +64,6 @@ async function controller() {
         case "quit":
           console.log(quit());
           return;
-        default:
-          break;
       }
     } catch (error) {
       console.log(error);
