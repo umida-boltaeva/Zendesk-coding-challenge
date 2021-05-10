@@ -3,19 +3,16 @@ const { menu } = require("./menu");
 
 function tickets(ticketsData) {
   var table = new Table({
-    head: ["ID", "Subject", "Status", "Priority", "Created at"],
+    head: ["ID", "Subject", "Status", "Created at"],
   });
 
   table.push(
-    ...ticketsData.data.tickets.map(
-      ({ id, subject, status, priority, created_at }) => [
-        id,
-        subject,
-        status,
-        priority,
-        created_at,
-      ]
-    )
+    ...ticketsData.data.tickets.map(({ id, subject, status, created_at }) => [
+      id,
+      subject,
+      status,
+      created_at,
+    ])
   );
   return table.toString() + showHelperMessage(ticketsData.data.meta);
 }
