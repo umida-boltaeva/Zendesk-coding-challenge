@@ -28,3 +28,5 @@ Finally, there is a `controller.js` file in the project. As I mentioned above it
 ## Usage
 
 1. Type `yarn start` in your terminal to start the project. You must be in the same directory that the project is created at.
+
+![Like this:](yarn_start.gif)
