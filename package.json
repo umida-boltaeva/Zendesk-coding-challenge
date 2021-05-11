@@ -6,7 +6,9 @@
   "author": "umida-boltaeva <umidakhon.boltaeva@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "devDependencies": {
     "jest": "^26.6.3"
