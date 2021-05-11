@@ -68,7 +68,22 @@ async function controller() {
           return;
       }
     } catch (error) {
-      console.log(error);
+      if (error.response) {
+        /*
+         * The request was made and the server responded with a
+         * status code that falls out of the range of 2xx
+         */
+        console.log(`API ERROR! ${error.response.data.error}`);
+      } else if (error.request) {
+        /*
+         * The request was made but no response was received, `error.request`
+         * is an instance of XMLHttpRequest in the browser and an instance
+         * of http.ClientRequest in Node.js
+         */
+        console.log("API ERROR! No response was received from the server.");
+      } else {
+        console.log(`ERROR! ${error}`);
+      }
     }
   }
 }
