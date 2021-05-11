@@ -1,6 +1,6 @@
 # Zendesk Ticket Viewer (Intern Coding Challenge)
 
-This is a CLI-based ticket viewer app built using Zendesk Ticket API. There are 102 tickets overall and a few options for you to use the app. This Ticket Viewer can:
+This is a CLI-based ticket viewer app built using Zendesk Ticket API. There are few options for you to use the app. This Ticket Viewer can:
 
 - connect to the Zendesk API
 - request all the tickets for your account
@@ -15,9 +15,9 @@ In other words, a user gives a command. That command is passed to a Controller t
 
 In my code, `api.js` file represents the **Model**. There are 2 functions inside the file which request both all tickets data and a single ticket data from Zendesk server using Zendesk Ticket API. So this file collects data and that's it!
 
-Moreover, all the **View** files are created inside the `view` folder. View files are responsible for delivering a specific message or data according to the command users give to the controller.
+Moreover, all the **View** files are created inside the `view` folder. View files are responsible for building a proper message to show to the user.
 
-Finally, there is a `controller.js` file in the project. As I mentioned above it stands between Model and View and navigates view files taking the required data from the Model.
+Finally, there is a `controller.js` file in the project. As I mentioned above it is a gateway part: it receives a command from the user and calls model and view layers to show expected output.
 
 ### Used technologies:
 
@@ -53,7 +53,7 @@ If you follow these steps correctly, then you're done! The project is ready to u
 
 ![](view_till_the_end.gif)
 
-5. To view a single ticket data, type `2` in command line. You will be asked the ID number of the ticket you want to see. Enter a positive digit from **1** to **102** and the ticket data will pop up! Ta-da!
+5. To view a single ticket data, type `2` in command line. You will be asked the ID number of the ticket you want to see. Enter it and details will pop up! Ta-da!
 
 ![](view_a_single_ticket.gif)
 
