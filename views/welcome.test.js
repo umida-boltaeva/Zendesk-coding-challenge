@@ -1,8 +1,6 @@
+const { expectNonEmptyString } = require("./_sharedTest");
 const { welcome } = require("./welcome");
 
 describe("views/welcome", () => {
-  it("returns a non-empty string", () => {
-    expect(typeof welcome()).toBe("string");
-    expect(welcome()).toMatch(/.+/);
-  });
+  expectNonEmptyString(welcome());
 });
