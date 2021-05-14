@@ -43,20 +43,20 @@ If you follow these steps correctly, then you're done! The project is ready to u
 
 2. To view the **menu**, type simply `menu`:
 
-![](menu.gif)
+![](assets/menu.gif)
 
 3. As is given in the menu, to view all tickets type `1`. You can see 25 tickets in one page:
 
-![](view_all_tickets.gif)
+![](assets/view_all_tickets.gif)
 
 4. If you want to see more tickets, press `1` again. Every time you give `1` command, you'll get the remaining tickets 25 at a time until the table finishes:
 
-![](view_till_the_end.gif)
+![](assets/view_till_the_end.gif)
 
 5. To view a single ticket data, type `2` in command line. You will be asked the ID number of the ticket you want to see. Enter it and details will pop up! Ta-da!
 
-![](view_a_single_ticket.gif)
+![](assets/view_a_single_ticket.gif)
 
 6. To exit just type `quit`:
 
-![](quit.gif)
+![](assets/quit.gif)
