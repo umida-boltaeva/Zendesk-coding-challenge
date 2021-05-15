@@ -1,4 +1,4 @@
-const { tickets } = require("./tickets");
+const tickets = require("./tickets");
 
 describe("views/tickets", () => {
   const data = {

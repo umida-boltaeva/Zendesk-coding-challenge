@@ -1,4 +1,4 @@
-const { ticket } = require("./ticket");
+const ticket = require("./ticket");
 
 describe("views/ticket", () => {
   const message = ticket({

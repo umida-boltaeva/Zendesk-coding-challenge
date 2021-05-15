@@ -1,9 +1,9 @@
 const prompt = require("prompt");
-const { menu } = require("./views/menu");
-const { quit } = require("./views/quit");
-const { welcome } = require("./views/welcome");
-const { tickets } = require("./views/tickets");
-const { ticket } = require("./views/ticket");
+const menu = require("./views/menu");
+const quit = require("./views/quit");
+const welcome = require("./views/welcome");
+const tickets = require("./views/tickets");
+const ticket = require("./views/ticket");
 const { getAllTickets, getTicket } = require("./api");
 
 const commandSchema = {
@@ -88,4 +88,4 @@ async function controller() {
   }
 }
 
-module.exports = { controller };
+module.exports = controller;

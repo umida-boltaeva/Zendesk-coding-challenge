@@ -4,4 +4,4 @@ function welcome() {
     Type "menu" to view options or "quit" to exit`;
 }
 
-module.exports = { welcome };
+module.exports = welcome;

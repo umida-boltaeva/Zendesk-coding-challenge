@@ -1,5 +1,5 @@
 const Table = require("cli-table3");
-const { menu } = require("./menu");
+const menu = require("./menu");
 
 function ticket(ticketData) {
   var table = new Table();
@@ -30,4 +30,4 @@ function ticket(ticketData) {
   ${menu()}`;
 }
 
-module.exports = { ticket };
+module.exports = ticket;

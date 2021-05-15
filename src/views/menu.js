@@ -6,4 +6,4 @@ function menu() {
     * Type "quit" to exit`;
 }
 
-module.exports = { menu };
+module.exports = menu;
