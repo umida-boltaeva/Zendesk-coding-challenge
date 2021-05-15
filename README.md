@@ -60,3 +60,7 @@ If you follow these steps correctly, then you're done! The project is ready to u
 6. To exit just type `quit`:
 
 ![](assets/quit.gif)
+
+## Test
+
+To run the test scripts type `yarn test`. If you enter `yarn watch` command, it will keep watching every code change and run the test automatically.
